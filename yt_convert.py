@@ -2,9 +2,9 @@ import youtube_dl
 import ffmpeg
 
 url = input('Url of youtube video: ')
-title = input('Title of Video: ')
+#title = input('Title of Video: ')
 
-ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s%(ext)s'})
+#ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s%(ext)s'})
 
 ydl_opt = {
     'format': 'bestaudio/best',
@@ -17,6 +17,6 @@ ydl_opt = {
 
 ydl = youtube_dl.YoutubeDL(ydl_opt)
 
-ydl.download(url)
+ydl.download([url])
 
 print('Video has been downloaded')
