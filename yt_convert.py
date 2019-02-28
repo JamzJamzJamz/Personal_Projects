@@ -1,17 +1,15 @@
 import youtube_dl
-import ffmpeg
 
 url = input('Url of youtube video: ')
-#title = input('Title of Video: ')
-
-#ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s%(ext)s'})
+title = input('Title of Video: ')
 
 ydl_opt = {
     'format': 'bestaudio/best',
+    'outtmpl': '{}.%(ext)s'.format(title),
     'postprocessors': [{
         'key': 'FFmpegExtractAudio',
         'preferredcodec': 'mp3',
-        'preferredquality': '192', 
+        'preferredquality': '192',
     }]
 }
 
